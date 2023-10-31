@@ -19,14 +19,15 @@ Install PyTorch and ImageNet dataset following the [official PyTorch ImageNet tr
 ### Pre-Training
 
 This implementation only supports **multi-gpu**, **DistributedDataParallel** training, which is faster and simpler; single-gpu or DataParallel training is not supported.
-The teacher model has already been downloaded from the original repository, and placed under teacher_model folder.
 
-Baseline: To pre-train models with 1 Teacher in an 4-gpu machine, run:
+To pre-train models in a 4-gpu machine, please first download the [ViT-Large model](https://drive.google.com/drive/folders/1tCdXhi_pWbRSgdUcmyOyP5mE0GMnpeC9?usp=sharing) as the teacher model, and put it into the teacher_model folder. Then:
+
+Baseline: To pre-train models with 1 Teacher in a 4-gpu machine, run:
 ```
 bash scripts/pretrain_my_CIFAR10.sh
 ```
 
-Experiment: To pre-train models with 2 Same Teachers in an 4-gpu machine, run:
+Experiment: To pre-train models with 2 Same Teachers in a 4-gpu machine, run:
 ```
 bash scripts/pretrain_my_CIFAR10_2sameT.sh
 ```
@@ -34,13 +35,13 @@ bash scripts/pretrain_my_CIFAR10_2sameT.sh
 
 
 ### Finetuning
-Baseline: To fintune models with 1 Teacher in an 4-gpu machine, run:
+Baseline: To finetune models with 1 Teacher in a 4-gpu machine, run:
 
 ```
 bash scripts/finetune_my_CIFAR10.sh
 ```
 
-Experiment: To fintune models with 2 Same Teachers in an 4-gpu machine, run:
+Experiment: To finetune models with 2 Same Teachers in a 4-gpu machine, run:
 
 ```
 bash scripts/finetune_my_CIFAR10_2sameT.sh
